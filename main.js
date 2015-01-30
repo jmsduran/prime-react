@@ -49,10 +49,12 @@ var PrimeReact = React.createClass({
     render: function() {
         var num = this.props.num;
         return (
-            <div>
+            <div className={"panel panel-primary"}>
                 <Header title={num} />
-                <IsPrime num={num} />
-                <PrimeFactors num={num} />
+                <div className={"panel-body"}>
+                    <IsPrime num={num} />
+                    <PrimeFactors num={num} />
+                </div>
             </div>
         );
     }
@@ -61,12 +63,14 @@ var PrimeReact = React.createClass({
 /**
  * <Header title={title} />
  *
- * Displays an H2 header.
+ * Displays an H3 header.
  */
 var Header = React.createClass({
     render: function() {
         return (
-            <h2>{this.props.title}:</h2>
+            <div className={"panel-heading"}>
+                <h3 className={"panel-title"}>The number {this.props.title}</h3>
+            </div>
         );
     }
 });
@@ -83,9 +87,9 @@ var IsPrime = React.createClass({
         var r = (isPrime) ? "" : "not ";
 
         return (
-            <div>
+            <p>
                 Is {r}a prime number.
-            </div>
+            </p>
         );
     }
 });
@@ -126,10 +130,9 @@ var PrimeFactors = React.createClass({
         }
 
         return (
-            <div>
-                <h3>Prime Factorization:</h3>
-                {r}
-            </div>
+            <p>
+                Has a prime factorization of: {r}
+            </p>
         );
     }
 });
@@ -145,9 +148,9 @@ var PrimeNumber = React.createClass({
         var mult = (this.props.isLast) ? "" : " x ";
 
         return (
-            <span>{this.props.num} {mult}</span>
+            <b>{this.props.num} {mult}</b>
         );
     }
 });
 
-React.render(<PrimeReact num="4910" />, document.body);
+React.render(<PrimeReact num="4910" />, document.getElementById("prime-react"));
