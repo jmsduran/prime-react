@@ -48,12 +48,18 @@ var primenum = function(n) {
 var PrimeReact = React.createClass({
     render: function() {
         var num = this.props.num;
+
         return (
-            <div className={"panel panel-primary"}>
-                <Header title={num} />
-                <div className={"panel-body"}>
-                    <IsPrime num={num} />
-                    <PrimeFactors num={num} />
+            <div className={"row"}>
+                <div className={"col-md-4 col-md-offset-4"}>
+                    <div className={"panel panel-primary"}>
+                        <Header title={num} />
+
+                        <div className={"panel-body"}>
+                            <IsPrime num={num} />
+                            <PrimeFactors num={num} />
+                        </div>
+                    </div>
                 </div>
             </div>
         );
