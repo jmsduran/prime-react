@@ -11,7 +11,7 @@ Simply load `index.html` from your browser.
 Dependencies
 ---
 
-Built using [React.js] (http://facebook.github.io/react/index.html).
+Built using [React.js] (http://facebook.github.io/react/index.html) and [Bootstrap] (http://getbootstrap.com/).
 
 License
 ---
