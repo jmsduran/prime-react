@@ -1,7 +1,9 @@
 prime-react
 =============
 
-A fun UI component created with React.js. Displays a UI module tag, that when passed a number, displays whether it's prime. Also displays a number's prime factorization.
+A fun UI component created with React.js. Displays a UI module tag, which generates a random number (0 - 7919) and displays whether it's prime. Also displays a number's prime factorization.
+
+![Sample](https://github.com/jmsduran/prime-react/tree/master/img/sample.png)
 
 Running
 ---
