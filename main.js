@@ -30,6 +30,10 @@ var primenum = function(n) {
         return isPrime;
     }
 
+    if (n < 2) {
+        return false;
+    }
+
     for (; s > 1; s--) {
         if (n % s == 0) {
             isPrime = false;
@@ -89,6 +93,7 @@ var Header = React.createClass({
 var IsPrime = React.createClass({
     render: function() {
         var n = this.props.num;
+
         var isPrime = primenum(n);
         var r = (isPrime) ? "" : "not ";
 
@@ -109,6 +114,14 @@ var PrimeFactors = React.createClass({
     render: function() {
         var n = this.props.num;
         var s = [];
+
+        if (n < 2) {
+            return (
+                <p>
+                    Has no prime factorization, it's {n} after all!
+                </p>
+            );
+        }
 
         for (var i = 2; n > 1;) {
             if (primenum(i) && n % i == 0) {
@@ -159,4 +172,6 @@ var PrimeNumber = React.createClass({
     }
 });
 
-React.render(<PrimeReact num="4910" />, document.getElementById("prime-react"));
+// Each request, generate a random number from 0 to 7919 (1000th prime).
+var rnd = Math.floor(Math.random() * 7919);
+React.render(<PrimeReact num={rnd} />, document.getElementById("prime-react"));
